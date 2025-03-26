@@ -120,11 +120,11 @@ class RAHA_OT_InfoPopup(bpy.types.Operator):
             layout = self.layout
             
             col = layout.column()
-            col.label(text="update 26/03/2025 - 15:00")
+            col.label(text="update 26/03/2025 - 15:460")
             col.label(text="Raha Tools 4")            
             col.separator()            
-            col.label(text="- update studio library fix bug path ")
-#            col.label(text="- add audio")
+            col.label(text="- update studio library fix bug path invalid ")
+            col.label(text="- update Tween Machine")
 #            col.label(text="- update import animation")
 #           col.label(text="- Playblast + HUD")
 #            col.separator()
@@ -205,20 +205,47 @@ class RAHA_PT_Tools_For_Animation(bpy.types.Panel):
         
         # Jika checkbox dicentang, tampilkan tombol Tween Machine
         if scene.show_tween_machine:
-            layout.label(text="Tween Machine:")
+            layout.label(text="Tween Slider:")
             layout.prop(scene, "pose_breakdowner_factor", text="Factor")
-            layout.separator()
+
+
+            box = layout.box()
+            row = box.row(align=True)
             
-            col = layout.column()
-            row = col.row()       
-            row.operator("pose.breakdown_custom", text="20").factor = 0.1
-            row.operator("pose.breakdown_custom", text="50").factor = 0.5
-            row.operator("pose.breakdown_custom", text="80").factor = 0.8
-            
-            row = col.row()
-            row.operator("pose.breakdown_custom", text="0").factor = 0.0
-            row.operator("pose.breakdown_custom", text="100").factor = 1.0                    
-                
+            row.label(text="Tween Button") 
+            sub = row.row(align=True)                 
+            row = box.row(align=True)
+            sub = row.row(align=True)
+    #        sub.operator("pose.apply_breakdowner_button", text="-1").factor = -1.0        
+            sub.operator("pose.apply_breakdowner_button", text="0").factor = 0.0
+            sub.operator("pose.apply_breakdowner_button", text="_").factor = 0.12
+            sub.operator("pose.apply_breakdowner_button", text="_").factor = 0.25
+            sub.operator("pose.apply_breakdowner_button", text="_").factor = 0.37
+            sub.operator("pose.apply_breakdowner_button", text="T").factor = 0.5        
+            # Tombol 6-10 (nilai positif)
+            sub = row.row(align=True)
+            sub.operator("pose.apply_breakdowner_button", text="_").factor = 0.62
+            sub.operator("pose.apply_breakdowner_button", text="_").factor = 0.75
+            sub.operator("pose.apply_breakdowner_button", text="_").factor = 0.87
+            sub.operator("pose.apply_breakdowner_button", text="100").factor = 1.0
+
+            row = box.row(align=True)
+            row.label(text="OverShoot - +")  
+            sub = row.row(align=True)              
+            row = box.row(align=True)
+
+            sub = row.row(align=True)
+            sub.operator("pose.apply_breakdowner_button", text="-").factor = -0.50
+            sub.operator("pose.apply_breakdowner_button", text="-").factor = -0.30
+            sub.operator("pose.apply_breakdowner_button", text="-").factor = -0.10 
+        
+            sub.operator("pose.dummy_button", text="  T  ")
+
+           
+            sub.operator("pose.apply_breakdowner_button", text="+").factor = 1.10
+            sub.operator("pose.apply_breakdowner_button", text="+").factor = 1.30
+            sub.operator("pose.apply_breakdowner_button", text="+").factor = 1.50                      
+            layout.label(text="==================================================")                
 #================================ Menu parent conststraint ==================================================================      
         # Checkbox untuk menampilkan Tween Machine
         layout.prop(scene, "show_parent", text="Parent - Smart Bake - Step snap")
