@@ -8,7 +8,7 @@ class RegisteredBone(bpy.types.PropertyGroup):
     name: bpy.props.StringProperty(name="Bone Name")
 
 class BoneCustomPropertiesPanel(bpy.types.Panel):
-    bl_label = "Raha Bone Custom Properties UI"
+    bl_label = "Show Bone Custom Properties UI"
     bl_idname = "OBJECT_PT_bone_custom_props"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'UI'
