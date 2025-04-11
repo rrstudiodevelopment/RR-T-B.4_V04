@@ -120,11 +120,11 @@ class RAHA_OT_InfoPopup(bpy.types.Operator):
             layout = self.layout
             
             col = layout.column()
-            col.label(text="update 26/03/2025 - 15:460")
+            col.label(text="update 11/04/2025 - 15:15")
             col.label(text="Raha Tools 4")            
             col.separator()            
-            col.label(text="- update studio library fix bug path invalid ")
-            col.label(text="- update Tween Machine")
+            col.label(text="- Bone Custom Properties UI ")
+#            col.label(text="- update Tween Machine")
 #            col.label(text="- update import animation")
 #           col.label(text="- Playblast + HUD")
 #            col.separator()
@@ -145,6 +145,7 @@ class RAHA_PT_Tools_For_Animation(bpy.types.Panel):
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'UI'
     bl_category = "Raha_Tools"
+    bl_order = 0
     
     preview_collection = None 
 
