@@ -6,7 +6,7 @@ class VIEW3D_OT_isolate_toggle(bpy.types.Operator):
     bl_label = "Toggle Isolate View"
     bl_description = "Isolate selected object or bone, toggle to reveal"
     bl_options = {'REGISTER', 'UNDO'}
-    bl_order = 2
+
 
     # Property untuk menyimpan objek/bone yang terseleksi sebelum isolasi
     stored_selection: bpy.props.CollectionProperty(type=bpy.types.PropertyGroup)
@@ -301,6 +301,7 @@ class RigLayersPanel(bpy.types.Panel):
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'UI'
     bl_category = 'Raha_Tools'
+    bl_order = 2
 
     def draw(self, context):
         layout = self.layout
