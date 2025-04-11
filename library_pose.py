@@ -13,6 +13,7 @@ class BoneCustomPropertiesPanel(bpy.types.Panel):
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'UI'
     bl_category = "Raha_Tools"
+    bl_order = 3
 
     def draw(self, context):
         layout = self.layout
