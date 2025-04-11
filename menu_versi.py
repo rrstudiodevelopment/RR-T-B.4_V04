@@ -11,6 +11,7 @@ class RAHA_OT_InfoPopup(bpy.types.Operator):
     """Menampilkan informasi Raha Tools"""
     bl_idname = "raha.info_popup"
     bl_label = "Info"
+    bl_order = 0
 
     def execute(self, context):
         def draw_popup(self, context):
