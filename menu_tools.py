@@ -145,7 +145,7 @@ class RAHA_PT_Tools_For_Animation(bpy.types.Panel):
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'UI'
     bl_category = "Raha_Tools"
-    bl_order = 0
+    bl_order = 1
     
     preview_collection = None 
 
