@@ -6,6 +6,7 @@ class VIEW3D_OT_isolate_toggle(bpy.types.Operator):
     bl_label = "Toggle Isolate View"
     bl_description = "Isolate selected object or bone, toggle to reveal"
     bl_options = {'REGISTER', 'UNDO'}
+    bl_order = 2
 
     # Property untuk menyimpan objek/bone yang terseleksi sebelum isolasi
     stored_selection: bpy.props.CollectionProperty(type=bpy.types.PropertyGroup)
