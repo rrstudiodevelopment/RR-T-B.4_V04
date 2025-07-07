@@ -1,5 +1,5 @@
 
-#    "name": "Bone Custom Properties UI",
+# #   "name": "Bone Custom Properties UI",
 
 
 import bpy
